@@ -30,6 +30,8 @@ var items = new SyndicationItem[]
 feed.Items = items;
 
 // Save the RSS feed to a XML file
-using var writer = XmlWriter.Create(option.OutputPath ?? "feed.xml");
+var feedPath = Path.GetFullPath(option.OutputPath ?? "feed.xml");
+Directory.CreateDirectory(Path.GetDirectoryName(feedPath)!);
+using var writer = XmlWriter.Create(feedPath);
 var rssFormatter = new Rss20FeedFormatter(feed);
 rssFormatter.WriteTo(writer);
