@@ -14,19 +14,8 @@
     <PackageReference Include="System.ServiceModel.Syndication" Version="4.7.0" />
   </ItemGroup>
 
-  <Target Name="GenerateRSSFeedXml" BeforeTargets="ResolveProjectStaticWebAssets">
-
-    <PropertyGroup>
-      <RSSFeedXmlFilePath>wwwroot\feed.xml</RSSFeedXmlFilePath>
-    </PropertyGroup>
-
-    <Exec Command="dotnet run --project &quot;$(ProjectDir)../RSSFeedXMLFileGenerator&quot; -o &quot;$(ProjectDir)$(RSSFeedXmlFilePath)&quot;" />
-
-    <ItemGroup>
-      <Content Remove="$(RSSFeedXmlFilePath)" />
-      <Content Include="$(RSSFeedXmlFilePath)" />
-    </ItemGroup>
-
-  </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\RazorClassLibrary1\RazorClassLibrary1.csproj" />
+  </ItemGroup>
 
 </Project>

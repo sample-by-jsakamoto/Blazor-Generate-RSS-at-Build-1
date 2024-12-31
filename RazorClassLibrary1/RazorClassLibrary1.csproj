@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
+  </ItemGroup>
+
+  <Target Name="GenerateRSSFeedXml" BeforeTargets="ResolveProjectStaticWebAssets" Condition=" '$(WasmBuildingForNestedPublish)' != 'true' ">
+
+    <PropertyGroup>
+      <RSSFeedXmlFilePath>wwwroot/feed.xml</RSSFeedXmlFilePath>
+    </PropertyGroup>
+
+    <Exec Command="dotnet run --project &quot;$(ProjectDir)../RSSFeedXMLFileGenerator&quot; -o &quot;$(ProjectDir)$(RSSFeedXmlFilePath)&quot;" />
+
+    <ItemGroup>
+      <Content Remove="$(RSSFeedXmlFilePath)" />
+      <Content Include="$(RSSFeedXmlFilePath)" />
+    </ItemGroup>
+
+  </Target>
+</Project>

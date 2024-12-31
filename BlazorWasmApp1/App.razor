@@ -25,7 +25,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        using var feedXmlStream = await Http.GetStreamAsync("./feed.xml");
+        using var feedXmlStream = await Http.GetStreamAsync("./_content/RazorClassLibrary1/feed.xml");
         using var reader = XmlReader.Create(feedXmlStream);
         _feed = SyndicationFeed.Load(reader);
     }
