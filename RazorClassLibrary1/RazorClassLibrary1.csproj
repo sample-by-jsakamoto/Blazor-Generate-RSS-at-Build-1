@@ -20,7 +20,18 @@
       <RSSFeedXmlFilePath>wwwroot/feed1.xml</RSSFeedXmlFilePath>
     </PropertyGroup>
 
-    <Exec Command="dotnet run --project &quot;$(ProjectDir)../RSSFeedXMLFileGenerator&quot; -o &quot;$(ProjectDir)$(RSSFeedXmlFilePath)&quot;" />
+    <ItemGroup>
+      <RSSFeedXMLFileGeneratorSourceCode Include="$(ProjectDir)../RSSFeedXMLFileGenerator/**/*" />
+      <RSSFeedXMLFileGeneratorSourceCode Remove="$(ProjectDir)../RSSFeedXMLFileGenerator/bin/**/*" />
+      <RSSFeedXMLFileGeneratorSourceCode Remove="$(ProjectDir)../RSSFeedXMLFileGenerator/obj/**/*" />
+      <RSSFeedXMLFileGeneratorSourceCode Remove="$(ProjectDir)../RSSFeedXMLFileGenerator/.vs/**/*" />
+      <RSSFeedXMLFileGeneratorSourceCode Remove="$(ProjectDir)../RSSFeedXMLFileGenerator/*.user" />
+    </ItemGroup>
+    <Copy
+      SourceFiles="@(RSSFeedXMLFileGeneratorSourceCode)"
+      DestinationFiles="@(RSSFeedXMLFileGeneratorSourceCode->'$(ProjectDir)obj/RSSFeedXMLFileGenerator/%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true" />
+    <Exec Command="dotnet run --project &quot;$(ProjectDir)obj/RSSFeedXMLFileGenerator&quot; -o &quot;$(ProjectDir)$(RSSFeedXmlFilePath)&quot;" />
 
     <ItemGroup>
       <Content Remove="$(RSSFeedXmlFilePath)" />
