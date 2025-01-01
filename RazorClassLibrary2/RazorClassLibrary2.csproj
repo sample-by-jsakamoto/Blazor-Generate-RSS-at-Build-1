@@ -17,7 +17,7 @@
   <Target Name="GenerateRSSFeedXml" BeforeTargets="ResolveProjectStaticWebAssets" Condition=" '$(WasmBuildingForNestedPublish)' != 'true' ">
 
     <PropertyGroup>
-      <RSSFeedXmlFilePath>wwwroot/feed2.xml</RSSFeedXmlFilePath>
+      <RSSFeedXmlFilePath>$([System.IO.Path]::Combine('wwwroot', 'feed2.xml'))</RSSFeedXmlFilePath>
     </PropertyGroup>
 
     <ItemGroup>
