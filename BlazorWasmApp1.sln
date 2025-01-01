@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSFeedXMLFileGenerator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorClassLibrary1", "RazorClassLibrary1\RazorClassLibrary1.csproj", "{AC9CE55E-8EBB-41ED-AA78-29A74E8FD472}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorClassLibrary2", "RazorClassLibrary2\RazorClassLibrary2.csproj", "{89B7E36B-4EAA-40FC-8A4B-CCC05C2DC197}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AC9CE55E-8EBB-41ED-AA78-29A74E8FD472}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC9CE55E-8EBB-41ED-AA78-29A74E8FD472}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC9CE55E-8EBB-41ED-AA78-29A74E8FD472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89B7E36B-4EAA-40FC-8A4B-CCC05C2DC197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B7E36B-4EAA-40FC-8A4B-CCC05C2DC197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B7E36B-4EAA-40FC-8A4B-CCC05C2DC197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B7E36B-4EAA-40FC-8A4B-CCC05C2DC197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

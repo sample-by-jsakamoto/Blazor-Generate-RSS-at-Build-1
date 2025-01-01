@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
@@ -17,7 +18,7 @@
   <Target Name="GenerateRSSFeedXml" BeforeTargets="ResolveProjectStaticWebAssets" Condition=" '$(WasmBuildingForNestedPublish)' != 'true' ">
 
     <PropertyGroup>
-      <RSSFeedXmlFilePath>wwwroot/feed1.xml</RSSFeedXmlFilePath>
+      <RSSFeedXmlFilePath>wwwroot/feed2.xml</RSSFeedXmlFilePath>
     </PropertyGroup>
 
     <Exec Command="dotnet run --project &quot;$(ProjectDir)../RSSFeedXMLFileGenerator&quot; -o &quot;$(ProjectDir)$(RSSFeedXmlFilePath)&quot;" />
