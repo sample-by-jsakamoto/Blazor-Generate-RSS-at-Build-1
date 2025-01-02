@@ -21,7 +21,7 @@
       <RSSFeedXmlFilePath>$([System.IO.Path]::Combine('wwwroot', 'feed2.xml'))</RSSFeedXmlFilePath>
     </PropertyGroup>
 
-    <Exec Command="dotnet run --project &quot;$(ProjectDir)../RSSFeedXMLFileGenerator&quot; -o &quot;$(ProjectDir)$(RSSFeedXmlFilePath)&quot;" />
+    <Exec Command="dotnet run --project &quot;$(ProjectDir)../RSSFeedXMLFileGenerator&quot; -p BuildScope=$(ProjectName) -o &quot;$(ProjectDir)$(RSSFeedXmlFilePath)&quot;" />
 
     <ItemGroup>
       <Content Remove="$(RSSFeedXmlFilePath)" />

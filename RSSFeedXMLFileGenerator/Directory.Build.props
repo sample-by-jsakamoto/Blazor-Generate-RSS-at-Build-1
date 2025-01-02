@@ -1,0 +1,10 @@
+<Project>
+
+  <PropertyGroup>
+    <BaseIntermediateOutputPath Condition=" '$(BuildScope)' != '' ">obj\$(BuildScope)\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath Condition=" '$(BuildScope)' != '' ">obj\$(BuildScope)\$(Configuration)\</IntermediateOutputPath>
+    <BaseOutputPath Condition=" '$(BuildScope)' != '' ">bin\$(BuildScope)\</BaseOutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);bin/**;obj/**</DefaultItemExcludes>
+  </PropertyGroup>
+
+</Project>
