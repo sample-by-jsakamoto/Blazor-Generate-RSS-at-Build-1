@@ -15,6 +15,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SharedLibrary1\SharedLibrary1.csproj" />
+  </ItemGroup>
+
   <Target Name="GenerateRSSFeedXml" BeforeTargets="ResolveProjectStaticWebAssets" Condition=" '$(WasmBuildingForNestedPublish)' != 'true' ">
 
     <PropertyGroup>

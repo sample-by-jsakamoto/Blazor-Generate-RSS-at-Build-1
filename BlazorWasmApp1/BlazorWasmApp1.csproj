@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RazorClassLibrary1\RazorClassLibrary1.csproj" />
     <ProjectReference Include="..\RazorClassLibrary2\RazorClassLibrary2.csproj" />
+    <ProjectReference Include="..\SharedLibrary1\SharedLibrary1.csproj" />
   </ItemGroup>
 
 </Project>
